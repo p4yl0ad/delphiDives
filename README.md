@@ -1,2 +1,26 @@
 # delphiDives
 Collection of learning projects &amp; experiments to learn object pascal(delphi)
+
+
+
+Resources 
+
+Overview of featires 
+Language guide (WHammmmm pdf , .net framework & delphi)
+- https://www.win.tue.nl/~wstomv/edu/delphi/DelphiLanguageGuide.pdf
+
+Good quick reference sheet for vars/formats etc etc
+- https://www.explainth.at/wp-content/uploads/2018/03/dquick.pdf
+
+Online / Downloadable resources
+- https://overapi.com/delphi
+
+Jessicas corner of cyber space
+- https://www.raebear.net/programming/delphi/
+
+- O'Riley delphi in a nutshell (QnV5IGl0IHlvdSBzY3VtYmFnIDspIA==)
+http://index-of.co.uk/Misc/O%27Reilly%20Delphi%20In%20a%20Nutshell.pdf
+
+LUA and Delphi
+- https://www.explainth.at/en/delphi/luawrap.shtml
+
