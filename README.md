@@ -30,3 +30,8 @@ LUA and Delphi
 Compiling
 - https://delphi.fandom.com/wiki/Compile_from_Commandline
 - 
+
+
+
+Decompiling / reversing Delphi(object pascal)
+- https://www.thoughtco.com/decompiling-delphi-1-3-1057974
