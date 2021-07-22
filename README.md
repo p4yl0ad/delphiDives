@@ -40,8 +40,7 @@ List Of Examples
 Named Pipes Read & Write
 - https://delphi.xcjc.net/viewthread.php?tid=49656&extra=page%3D2
 
-
-
+https://web.archive.org/web/20150123093414/http://smythconsulting.blogspot.com/2011/07/smartmediaplayer-pipes-part4.html
 
 
 
