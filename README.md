@@ -33,5 +33,17 @@ Compiling
 
 
 
+Idea sources
+List Of Examples
+- https://delphi.xcjc.net/forumdisplay.php?fid=15&page=2
+
+Named Pipes Read & Write
+- https://delphi.xcjc.net/viewthread.php?tid=49656&extra=page%3D2
+
+
+
+
+
+
 Decompiling / reversing Delphi(object pascal)
 - https://www.thoughtco.com/decompiling-delphi-1-3-1057974
