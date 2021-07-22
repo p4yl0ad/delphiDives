@@ -60,3 +60,26 @@ Decompiling / reversing Delphi(object pascal)
 
 File operations 
 - http://www.delphibasics.co.uk/RTL.asp?Name=fileexists&ExpandCode1=Yes
+
+
+
+http://wiki.freepascal.org/Dynamic_array
+https://www.freepascal.org/docs-html/rtl/system/setlength.html
+https://www.freepascal.org/docs-html/rtl/system/low.html
+https://www.freepascal.org/docs-html/rtl/system/high.html
+
+
+https://www.freepascal.org/docs-html/rtl/system/paramstr.html
+https://www.freepascal.org/docs-html/rtl/sysutils/extractfiledir.html
+
+
+https://www.freepascal.org/docs-html-3.0.0/rtl/dos/fileattributes.html
+
+
+https://www.freepascal.org/docs-html/rtl/system/lineending.html
+https://www.freepascal.org/docs-html/rtl/sysutils/pathdelim.html
+
+
+http://wiki.freepascal.org/findallfiles
+https://www.freepascal.org/docs-html/rtl/classes/tstringlist.html
+https://www.freepascal.org/docs-html/rtl/sysutils/format.html
