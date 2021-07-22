@@ -24,3 +24,9 @@ http://index-of.co.uk/Misc/O%27Reilly%20Delphi%20In%20a%20Nutshell.pdf
 LUA and Delphi
 - https://www.explainth.at/en/delphi/luawrap.shtml
 
+
+
+
+Compiling
+- https://delphi.fandom.com/wiki/Compile_from_Commandline
+- 
