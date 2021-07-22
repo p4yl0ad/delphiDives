@@ -1,0 +1,5 @@
+[Directories]
+OutputDir=..\Bin
+UsePackages=0
+[Parameters]
+RunParams=pipe=interop.demo

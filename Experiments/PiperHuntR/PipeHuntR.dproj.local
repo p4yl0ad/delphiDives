@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/07/22 12:35:17.000.692,C:\Users\p4yl0\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\p4yl0\Documents\Embarcadero\Studio\Projects\NamedPipes.dproj</Transaction>
+    <Transaction>2021/07/22 14:14:22.000.172,C:\Users\p4yl0\Documents\Embarcadero\Studio\Projects\NamedPipes.dproj=C:\Tools\DelphiShit\PipeHuntR.dproj</Transaction>
+    <Transaction>2021/07/22 14:15:11.000.732,C:\Tools\DelphiShit\PipeHuntR.dproj=C:\Tools\DelphiShit\PiperHuntR\PipeHuntR.dproj</Transaction>
+    <Transaction>2021/07/22 15:15:15.543,C:\Tools\DelphiShit\PiperHuntR\PipeHuntR.dproj=C:\Tools\DelphiShit\PiperHuntR\PipeHuntR.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

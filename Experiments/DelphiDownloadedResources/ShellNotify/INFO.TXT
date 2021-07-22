@@ -1,0 +1,22 @@
+                             Firesoft ShellNotify 1.0
+                               Federico Firenze (c)
+                             ------------------------
+
+
+Aviso Legal
+-----------
+
+  El uso de este componente es totalmente gratuito para su uso particular, 
+en el caso de su uso comercial, comunicarse con webmaster@firesoft.com.ar.
+  Firesoft no se hace responsable de los daños ocasionados por la mala utilización 
+de sus textos y productos.
+
+Registro de los Componentes
+---------------------------
+
+  El registro del uso de los componentes es obligatorio, al registrarse su e-mail
+quedará en la lista de e-mails de Firesoft, y recibirá noticias sobre la actualización
+del software.
+  Para registrarse solo debe mandar un correo electrónico a webmaster@firesoft.com.ar, 
+con asunto "Registro" y el nombre del paquete que ha bajado de la página.
+

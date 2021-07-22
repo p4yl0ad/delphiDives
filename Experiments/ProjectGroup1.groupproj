@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{287F579B-1BB0-4E65-BA81-79A6E705A0A0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="HelloDelphi\HelloDelphi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PiperHuntR\PipeHuntR.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HelloDelphi">
+        <MSBuild Projects="HelloDelphi\HelloDelphi.dproj"/>
+    </Target>
+    <Target Name="HelloDelphi:Clean">
+        <MSBuild Projects="HelloDelphi\HelloDelphi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloDelphi:Make">
+        <MSBuild Projects="HelloDelphi\HelloDelphi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PipeHuntR">
+        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj"/>
+    </Target>
+    <Target Name="PipeHuntR:Clean">
+        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PipeHuntR:Make">
+        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HelloDelphi;PipeHuntR"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
