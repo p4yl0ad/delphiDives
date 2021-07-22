@@ -1,16 +1,16 @@
 # delphiDives
 Collection of learning projects &amp; experiments to learn object pascal(delphi)
 
-Good Forums:
+Good Forums / wikis:
 - https://forum.lazarus.freepascal.org/index.php
 - https://delphi.xcjc.net
-
+- https://wiki.freepascal.org/Main_Page
 
 
 
 Resources 
 
-Overview of featires 
+Overview of features 
 Language guide (WHammmmm pdf , .net framework & delphi)
 - https://www.win.tue.nl/~wstomv/edu/delphi/DelphiLanguageGuide.pdf
 
