@@ -46,7 +46,8 @@ Best named pipe docu
 https://web.archive.org/web/20150123093414/http://smythconsulting.blogspot.com/2011/07/smartmediaplayer-pipes-part4.html
 
 
-
+C++ implementation 
+- https://gist.github.com/nstarke/02c57823f473702186e1db94dca8edae
 
 Decompiling / reversing Delphi(object pascal)
 - https://www.thoughtco.com/decompiling-delphi-1-3-1057974
