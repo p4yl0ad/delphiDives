@@ -9,6 +9,9 @@
         <Projects Include="PiperHuntR\PipeHuntR.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="QPscanR\QPscanR.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="PipeHuntR:Make">
         <MSBuild Projects="PiperHuntR\PipeHuntR.dproj" Targets="Make"/>
     </Target>
+    <Target Name="QPscanR">
+        <MSBuild Projects="QPscanR\QPscanR.dproj"/>
+    </Target>
+    <Target Name="QPscanR:Clean">
+        <MSBuild Projects="QPscanR\QPscanR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QPscanR:Make">
+        <MSBuild Projects="QPscanR\QPscanR.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="HelloDelphi;PipeHuntR"/>
+        <CallTarget Targets="HelloDelphi;PipeHuntR;QPscanR"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean"/>
+        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean;QPscanR:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make"/>
+        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make;QPscanR:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
