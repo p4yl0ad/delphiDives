@@ -38,6 +38,7 @@
 *.map
 *.dres
 *.rsm
+*.pas
 *.tds
 *.dcu
 *.lib
