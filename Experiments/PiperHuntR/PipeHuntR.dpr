@@ -17,7 +17,6 @@ var
 begin
   ListDir:='\\.\pipe\';
   If FindFirst (ListDir+'*',faAnyFile and faDirectory,Info)=0 then
-  //If FindFirst ('*',faAnyFile and faDirectory,Info)=0 then
   begin
     repeat
       with Info do
@@ -30,4 +29,4 @@ begin
   end;
   FindClose(Info);
   Writeln ('Finished pipe hunt');
-  end.
+end.
