@@ -56,3 +56,7 @@ C++ implementation
 
 Decompiling / reversing Delphi(object pascal)
 - https://www.thoughtco.com/decompiling-delphi-1-3-1057974
+
+
+File operations 
+- http://www.delphibasics.co.uk/RTL.asp?Name=fileexists&ExpandCode1=Yes
