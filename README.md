@@ -1,6 +1,11 @@
 # delphiDives
 Collection of learning projects &amp; experiments to learn object pascal(delphi)
 
+Good Forums:
+- https://forum.lazarus.freepascal.org/index.php
+- https://delphi.xcjc.net
+
+
 
 
 Resources 
