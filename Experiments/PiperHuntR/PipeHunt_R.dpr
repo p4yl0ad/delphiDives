@@ -1,13 +1,16 @@
-program PipeHuntR;
+program PipeHunt_R;
 
 {$APPTYPE CONSOLE}
 {$R *.res}
 
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
+  {$IFDEF UNIX}
+  {$IFDEF UseCThreads}
   cthreads,
-  {$ENDIF}{$ENDIF}
-  Classes, sysutils;
+  {$ENDIF }
+  {$ENDIF }
+  Classes,
+  sysutils;
 
 // START
 var

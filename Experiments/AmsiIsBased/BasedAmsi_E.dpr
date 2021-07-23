@@ -1,4 +1,4 @@
-program AmsiIsBased;
+program BasedAmsi_E;
 
 {$APPTYPE CONSOLE}
 

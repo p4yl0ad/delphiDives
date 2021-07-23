@@ -1,4 +1,4 @@
-program QPscanR;
+program QuickPortscan_R;
 
 {$APPTYPE CONSOLE}
 
