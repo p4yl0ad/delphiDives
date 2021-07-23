@@ -2,30 +2,17 @@ program MouseJiggler_T;
 
 {$APPTYPE CONSOLE}
 
-//Mouse position code:
-{https://rosettacode.org/wiki/Mouse_position}
-
-//Adding extra components
-{Project menu-->options-->delphi compiler->>add in "unit scope names" value "Vcl"}
-{https://stackoverflow.com/questions/8797138/design-time-package-fails-to-build-file-not-found-graphics-dcu}
-
-//Misc reading about components
-{https://www.delphipower.xyz/guide_6/installing_component_packages.html}
-{http://docwiki.embarcadero.com/RADStudio/Sydney/en/VCL_Overview}
-{http://docwiki.embarcadero.com/CodeExamples/Sydney/en/OnMouseMove_(Delphi)}
-
 uses
   SysUtils,
   Vcl.Controls,
   Windows,
   Math,
-  Vcl.Forms
-  ;
+  Vcl.Forms;
 
 var
   MyMouse : TMouse;
 
-  JA, SW, SH, RX, RY, FL : Integer;
+  JA, SW, SH, RX, RY, FL, TS, TMS : Integer;
   mx, my, nx, ny, len : double;
 
 begin
@@ -53,6 +40,8 @@ begin
         ).y)+
        ')'
       );
+      TS := FL + JA;
+      TMS := TS * 1000;
       WriteLn(
        'Screen Width ',
        SW,
@@ -60,12 +49,22 @@ begin
        'Screen Height ',
        SH,
        #13#10,
+       #13#10,
        'Jitter Ammount ',
-       JA , ' Seconds'
+       JA,
+       '/300 Seconds',
+       #13#10,
+       'Fixed Delay ',
+       FL,
+       #13#10,
+       'Total Seconds Sleep ',
+       TS,
+       #13#10,
+       'Total Milliseconds Sleep ',
+       TMS
       );
       SetCursorPos(RX, RY);
-      WriteLn(JA * 100)
-      sleep(JA * 100);
+      sleep(TMS);
     end
 
   except
