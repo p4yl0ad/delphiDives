@@ -76,6 +76,41 @@ File operations
 
 
 
+
+//Mouse position code:
+{https://rosettacode.org/wiki/Mouse_position}
+
+//Adding extra components
+{Project menu-->options-->delphi compiler->>add in "unit scope names" value "Vcl"}
+{https://stackoverflow.com/questions/8797138/design-time-package-fails-to-build-file-not-found-graphics-dcu}
+
+//Misc reading about components
+{https://www.delphipower.xyz/guide_6/installing_component_packages.html}
+{http://docwiki.embarcadero.com/RADStudio/Sydney/en/VCL_Overview}
+{http://docwiki.embarcadero.com/CodeExamples/Sydney/en/OnMouseMove_(Delphi)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - http://wiki.freepascal.org/Dynamic_array
 - https://www.freepascal.org/docs-html/rtl/system/setlength.html
 - https://www.freepascal.org/docs-html/rtl/system/low.html

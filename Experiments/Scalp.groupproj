@@ -6,13 +6,16 @@
         <Projects Include="HelloDelphi\HelloDelphi.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="PiperHuntR\PipeHuntR.dproj">
+        <Projects Include="PiperHuntR\PipeHunt_R.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="QPscanR\QPscanR.dproj">
+        <Projects Include="QPscanR\QuickPortscan_R.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="AmsiIsBased\AmsiIsBased.dproj">
+        <Projects Include="AmsiIsBased\BasedAmsi_E.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MouseJigglerT\MouseJiggler_T.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -32,41 +35,50 @@
     <Target Name="HelloDelphi:Make">
         <MSBuild Projects="HelloDelphi\HelloDelphi.dproj" Targets="Make"/>
     </Target>
-    <Target Name="PipeHuntR">
-        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj"/>
+    <Target Name="PipeHunt_R">
+        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj"/>
     </Target>
-    <Target Name="PipeHuntR:Clean">
-        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj" Targets="Clean"/>
+    <Target Name="PipeHunt_R:Clean">
+        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="PipeHuntR:Make">
-        <MSBuild Projects="PiperHuntR\PipeHuntR.dproj" Targets="Make"/>
+    <Target Name="PipeHunt_R:Make">
+        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj" Targets="Make"/>
     </Target>
-    <Target Name="QPscanR">
-        <MSBuild Projects="QPscanR\QPscanR.dproj"/>
+    <Target Name="QuickPortscan_R">
+        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj"/>
     </Target>
-    <Target Name="QPscanR:Clean">
-        <MSBuild Projects="QPscanR\QPscanR.dproj" Targets="Clean"/>
+    <Target Name="QuickPortscan_R:Clean">
+        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="QPscanR:Make">
-        <MSBuild Projects="QPscanR\QPscanR.dproj" Targets="Make"/>
+    <Target Name="QuickPortscan_R:Make">
+        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj" Targets="Make"/>
     </Target>
-    <Target Name="AmsiIsBased">
-        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj"/>
+    <Target Name="BasedAmsi_E">
+        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj"/>
     </Target>
-    <Target Name="AmsiIsBased:Clean">
-        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj" Targets="Clean"/>
+    <Target Name="BasedAmsi_E:Clean">
+        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="AmsiIsBased:Make">
-        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj" Targets="Make"/>
+    <Target Name="BasedAmsi_E:Make">
+        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MouseJiggler_T">
+        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj"/>
+    </Target>
+    <Target Name="MouseJiggler_T:Clean">
+        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MouseJiggler_T:Make">
+        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="HelloDelphi;PipeHuntR;QPscanR;AmsiIsBased"/>
+        <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean;QPscanR:Clean;AmsiIsBased:Clean"/>
+        <CallTarget Targets="HelloDelphi:Clean;PipeHunt_R:Clean;QuickPortscan_R:Clean;BasedAmsi_E:Clean;MouseJiggler_T:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make;QPscanR:Make;AmsiIsBased:Make"/>
+        <CallTarget Targets="HelloDelphi:Make;PipeHunt_R:Make;QuickPortscan_R:Make;BasedAmsi_E:Make;MouseJiggler_T:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
