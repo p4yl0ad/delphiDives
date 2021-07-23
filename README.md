@@ -1,6 +1,19 @@
 # delphiDives
 Collection of learning projects &amp; experiments to learn object pascal(delphi)
 
+
+
+__Legend__:
+- R - Recon
+- E - Exploit
+- T - Tool/Automated_Action
+
+
+
+
+
+
+
 Good Forums / wikis:
 - https://forum.lazarus.freepascal.org/index.php
 - https://delphi.xcjc.net
