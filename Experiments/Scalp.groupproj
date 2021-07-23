@@ -6,10 +6,10 @@
         <Projects Include="HelloDelphi\HelloDelphi.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="PiperHuntR\PipeHunt_R.dproj">
+        <Projects Include="PiperHunt_R\PipeHunt_R.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="QPscanR\QuickPortscan_R.dproj">
+        <Projects Include="QuickPortscan_R\QuickPortscan_R.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="AmsiIsBased\BasedAmsi_E.dproj">
@@ -36,40 +36,40 @@
         <MSBuild Projects="HelloDelphi\HelloDelphi.dproj" Targets="Make"/>
     </Target>
     <Target Name="PipeHunt_R">
-        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj"/>
+        <MSBuild Projects="PiperHunt_R\PipeHunt_R.dproj"/>
     </Target>
     <Target Name="PipeHunt_R:Clean">
-        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj" Targets="Clean"/>
+        <MSBuild Projects="PiperHunt_R\PipeHunt_R.dproj" Targets="Clean"/>
     </Target>
     <Target Name="PipeHunt_R:Make">
-        <MSBuild Projects="PiperHuntR\PipeHunt_R.dproj" Targets="Make"/>
+        <MSBuild Projects="PiperHunt_R\PipeHunt_R.dproj" Targets="Make"/>
     </Target>
     <Target Name="QuickPortscan_R">
-        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj"/>
+        <MSBuild Projects="QuickPortscan_R\QuickPortscan_R.dproj"/>
     </Target>
     <Target Name="QuickPortscan_R:Clean">
-        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj" Targets="Clean"/>
+        <MSBuild Projects="QuickPortscan_R\QuickPortscan_R.dproj" Targets="Clean"/>
     </Target>
     <Target Name="QuickPortscan_R:Make">
-        <MSBuild Projects="QPscanR\QuickPortscan_R.dproj" Targets="Make"/>
+        <MSBuild Projects="QuickPortscan_R\QuickPortscan_R.dproj" Targets="Make"/>
     </Target>
     <Target Name="BasedAmsi_E">
-        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj"/>
+        <MSBuild Projects="BasedAmsi_E\BasedAmsi_E.dproj"/>
     </Target>
     <Target Name="BasedAmsi_E:Clean">
-        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj" Targets="Clean"/>
+        <MSBuild Projects="BasedAmsi_E\BasedAmsi_E.dproj" Targets="Clean"/>
     </Target>
     <Target Name="BasedAmsi_E:Make">
-        <MSBuild Projects="AmsiIsBased\BasedAmsi_E.dproj" Targets="Make"/>
+        <MSBuild Projects="BasedAmsi_E\BasedAmsi_E.dproj" Targets="Make"/>
     </Target>
     <Target Name="MouseJiggler_T">
-        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj"/>
+        <MSBuild Projects="MouseJiggler_T\MouseJiggler_T.dproj"/>
     </Target>
     <Target Name="MouseJiggler_T:Clean">
-        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj" Targets="Clean"/>
+        <MSBuild Projects="MouseJiggler_T\MouseJiggler_T.dproj" Targets="Clean"/>
     </Target>
     <Target Name="MouseJiggler_T:Make">
-        <MSBuild Projects="MouseJigglerT\MouseJiggler_T.dproj" Targets="Make"/>
+        <MSBuild Projects="MouseJiggler_T\MouseJiggler_T.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T"/>
