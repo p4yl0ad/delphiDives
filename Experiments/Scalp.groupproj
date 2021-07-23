@@ -12,6 +12,9 @@
         <Projects Include="QPscanR\QPscanR.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="AmsiIsBased\AmsiIsBased.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +50,23 @@
     <Target Name="QPscanR:Make">
         <MSBuild Projects="QPscanR\QPscanR.dproj" Targets="Make"/>
     </Target>
+    <Target Name="AmsiIsBased">
+        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj"/>
+    </Target>
+    <Target Name="AmsiIsBased:Clean">
+        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AmsiIsBased:Make">
+        <MSBuild Projects="AmsiIsBased\AmsiIsBased.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="HelloDelphi;PipeHuntR;QPscanR"/>
+        <CallTarget Targets="HelloDelphi;PipeHuntR;QPscanR;AmsiIsBased"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean;QPscanR:Clean"/>
+        <CallTarget Targets="HelloDelphi:Clean;PipeHuntR:Clean;QPscanR:Clean;AmsiIsBased:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make;QPscanR:Make"/>
+        <CallTarget Targets="HelloDelphi:Make;PipeHuntR:Make;QPscanR:Make;AmsiIsBased:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
