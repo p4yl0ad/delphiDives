@@ -10,6 +10,13 @@ __Legend__:
 
 
 
+Experiments:
+-> HelloDelphi (eWVhaC4uLi4gYSBoZWxsbyB3b3JsZCwgaSBzdGFydGVkIGxlYXJuaW5nIG9iamVjdCBwYXNjYWwgb24gdGhlIDIxc3QvMjJuZCBsZWF2ZSBtZSBhbG9uZSBoYWhh) 
+-> BasedAmsi_E
+-> PipeHunt_R
+-> QuickPortScan_R
+-> FirstLibrary_T
+-> MouseJiggler_T
 
 
 
