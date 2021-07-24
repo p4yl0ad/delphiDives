@@ -8,7 +8,9 @@ program QuickPortscan_R;
 
 {
 https://theroadtodelphi.com/2010/02/21/checking-if-a-tcp-port-is-open-using-delphi-and-winsocks/
+https://www.geeksforgeeks.org/creating-a-portscanner-in-c/
 }
+
 
 uses
   System.SysUtils,
