@@ -1,6 +1,5 @@
 # delphiDives
-Collection of learning projects &amp; experiments to learn object pascal(delphi)
-
+Collection of learning projects &amp; experiments to learn object pascal(delphi) 
 
 
 __Legend__:
@@ -9,7 +8,13 @@ __Legend__:
 - T - Tool/Automated_Action
 
 
-
+__Experiment Projects__:
+- HelloDelphi (eWVhaC4uLi4gYSBoZWxsbyB3b3JsZCwgaSBzdGFydGVkIGxlYXJuaW5nIG9iamVjdCBwYXNjYWwgb24gdGhlIDIxc3QvMjJuZCBsZWF2ZSBtZSBhbG9uZSBoYWhh) 
+- BasedAmsi_E
+- PipeHunt_R
+- QuickPortScan_R
+- FirstLibrary_T
+- MouseJiggler_T
 
 
 
@@ -42,6 +47,10 @@ http://index-of.co.uk/Misc/O%27Reilly%20Delphi%20In%20a%20Nutshell.pdf
 LUA and Delphi
 - https://www.explainth.at/en/delphi/luawrap.shtml
 
+
+Socket Programming
+- https://theroadtodelphi.com/2010/02/21/checking-if-a-tcp-port-is-open-using-delphi-and-winsocks/
+- 
 
 
 
