@@ -5,32 +5,31 @@ program BasedAmsi_E;
 {$R *.res}
 
 uses
-  System.SysUtils,
-  Vcl.Controls,
+  SysUtils,
+  //Vcl.Controls,
   Windows,
-  Math,
   Vcl.Forms;
 
 var
   HDLLInst : THandle;
-  Addy : pointer;
 
+
+{https://github.com/rasta-mouse/AmsiScanBufferBypass/blob/main/AmsiBypass.cs}
 
 begin
   try
-    { TODO -oUser -cConsole Main : Insert code here }
-    HDLLInst := SafeLoadLibrary ('amsi.dll');
-    Addy := GetProcAddress (HDLLInst, 'SetData');
-
-    WriteLn(Format ('Address: %p', [
-    GetProcAddress (HDLLInst, 'SetData')]));
-
-    //WriteLn(Format ('Address: %p',  Addy));
+    // Load amsi.dll , find AmsiScanBuffer
+    HDLLInst := SafeLoadLibrary('C:\\Windows\\System32\\amsi.dll');
+    WriteLn(
+      Format(
+        'amsi.dll base address: %p',[GetProcAddress(HDLLInst,'AmsiScanBuffer')]
+      )
+    );
     FreeLibrary (HDLLInst);
 
 
 
-    WriteLn(IntToHex (DWORD ( GetProcAddress (GetModuleHandle ('amsi.dll'), 'MessageBoxA')), 8));
+    //WriteLn(IntToHex (DWORD ( GetProcAddress (GetModuleHandle ('amsi.dll'), 'MessageBoxA')), 8));
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);

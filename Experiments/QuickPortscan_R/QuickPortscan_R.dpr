@@ -5,6 +5,11 @@ program QuickPortscan_R;
 //https://www.example-code.com/delphidll/socket_connect.asp
 
 
+
+{
+https://theroadtodelphi.com/2010/02/21/checking-if-a-tcp-port-is-open-using-delphi-and-winsocks/
+}
+
 uses
   System.SysUtils,
   Vcl.Forms,
