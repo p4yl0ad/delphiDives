@@ -1,13 +1,11 @@
 # delphiDives
-Collection of learning projects &amp; experiments to learn object pascal(delphi)
-
+Collection of learning projects &amp; experiments to learn object pascal(delphi) 
 
 
 __Legend__:
 - R - Recon
 - E - Exploit
 - T - Tool/Automated_Action
-
 
 
 __Experiment Projects__:
