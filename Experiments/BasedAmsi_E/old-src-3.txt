@@ -23,8 +23,6 @@ var
   hProcess: THandle;
   PidID : integer;
 
-
-
   dataout,datain:TBytes;
   Written: UIntPtr;
 
@@ -32,9 +30,6 @@ var
   asb : Pointer;
   NumWrote : SIZE_T;
   OldProtect : DWord;
-
-
-
 
   //garbage : Byte = $C3;
   garbage : Array[0..15] of byte = ($41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41);
