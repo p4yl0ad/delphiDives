@@ -3,7 +3,7 @@ program BasedAmsi_E;
 {$APPTYPE CONSOLE}
 
 {
-P/Invoke AmsiScanBuffer RET patch written in Object Pascal
+AmsiScanBuffer RET patch written in Object Pascal
 p4yl0ad
 
 Inspo/Src
