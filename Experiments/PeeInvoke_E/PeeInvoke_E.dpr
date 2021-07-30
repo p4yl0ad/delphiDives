@@ -61,6 +61,9 @@ private static extern uint NtRaiseHardError(
 
 
 //https://stackoverflow.com/questions/49207263/c-sharp-how-to-p-invoke-ntraiseharderror
+//https://docs.microsoft.com/en-us/archive/msdn-magazine/2017/may/c-use-modern-c-to-access-the-windows-registry
+//https://ros-diffs.reactos.narkive.com/wdRw0dFa/01-08-ntoskrnl-in-addition-to-the-hard-error-port-reference-also-the-process-that-handles-the-hard
+//https://coderoad.ru/9897693/%D0%9A%D0%B0%D0%BA-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%82%D1%8C-%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B5-%D0%BE%D0%BA%D0%BD%D0%BE-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BE%D1%82-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC-kernel
 
 
 uses
