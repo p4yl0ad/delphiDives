@@ -69,10 +69,8 @@ end;
 begin
 var
   cmd, param, path, com : string;
-
   cmd := 'cmd.exe';
   path := 'C:\Windows\Tasks';
-
 
 
   try
