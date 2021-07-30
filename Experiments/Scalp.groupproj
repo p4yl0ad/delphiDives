@@ -21,6 +21,12 @@
         <Projects Include="FirstLibrary_T\FirstLibrary_T.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="AyyEssEmm_T\AyyEssEmm_T.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PeeInvoke_E\PeeInvoke_E.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +89,32 @@
     <Target Name="FirstLibrary_T:Make">
         <MSBuild Projects="FirstLibrary_T\FirstLibrary_T.dproj" Targets="Make"/>
     </Target>
+    <Target Name="AyyEssEmm_T">
+        <MSBuild Projects="AyyEssEmm_T\AyyEssEmm_T.dproj"/>
+    </Target>
+    <Target Name="AyyEssEmm_T:Clean">
+        <MSBuild Projects="AyyEssEmm_T\AyyEssEmm_T.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AyyEssEmm_T:Make">
+        <MSBuild Projects="AyyEssEmm_T\AyyEssEmm_T.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PeeInvoke_E">
+        <MSBuild Projects="PeeInvoke_E\PeeInvoke_E.dproj"/>
+    </Target>
+    <Target Name="PeeInvoke_E:Clean">
+        <MSBuild Projects="PeeInvoke_E\PeeInvoke_E.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PeeInvoke_E:Make">
+        <MSBuild Projects="PeeInvoke_E\PeeInvoke_E.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T;FirstLibrary_T"/>
+        <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T;FirstLibrary_T;AyyEssEmm_T;PeeInvoke_E"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HelloDelphi:Clean;PipeHunt_R:Clean;QuickPortscan_R:Clean;BasedAmsi_E:Clean;MouseJiggler_T:Clean;FirstLibrary_T:Clean"/>
+        <CallTarget Targets="HelloDelphi:Clean;PipeHunt_R:Clean;QuickPortscan_R:Clean;BasedAmsi_E:Clean;MouseJiggler_T:Clean;FirstLibrary_T:Clean;AyyEssEmm_T:Clean;PeeInvoke_E:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HelloDelphi:Make;PipeHunt_R:Make;QuickPortscan_R:Make;BasedAmsi_E:Make;MouseJiggler_T:Make;FirstLibrary_T:Make"/>
+        <CallTarget Targets="HelloDelphi:Make;PipeHunt_R:Make;QuickPortscan_R:Make;BasedAmsi_E:Make;MouseJiggler_T:Make;FirstLibrary_T:Make;AyyEssEmm_T:Make;PeeInvoke_E:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

