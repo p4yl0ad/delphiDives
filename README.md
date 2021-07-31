@@ -1,21 +1,22 @@
 # delphiDives
-Collection of learning projects &amp; experiments to learn object pascal(delphi) 
-
+Collection of finished / unfinished learning projects &amp; experiments to learn object pascal(delphi) 
 
 __Legend__:
 - R - Recon
 - E - Exploit
 - T - Tool/Automated_Action
 
-
 __Experiment Projects__:
-- HelloDelphi (eWVhaC4uLi4gYSBoZWxsbyB3b3JsZCwgaSBzdGFydGVkIGxlYXJuaW5nIG9iamVjdCBwYXNjYWwgb24gdGhlIDIxc3QvMjJuZCBsZWF2ZSBtZSBhbG9uZSBoYWhh) 
+- HelloDelphi (eWVhaC4uLi4gYSBoZWxsbyB3b3JsZCwgaSBzdGFydGVkIGxlYXJuaW5nIG9iamVjdCBwYXNjYWwgb24gdGhlIDIxc3QvMjJuZCBsZWF2ZSBtZSBhbG9uZSBoYWhh)
 - BasedAmsi_E
-- PipeHunt_R
-- QuickPortScan_R
+- DelphiDownloadedResources
+- EncBoi_T
 - FirstLibrary_T
 - MouseJiggler_T
-
+- PeeInvoke_E
+- PiperHunt_R
+- QuickPortscan_R
+- QuietShower_E 
 
 
 
@@ -23,7 +24,6 @@ Good Forums / wikis:
 - https://forum.lazarus.freepascal.org/index.php
 - https://delphi.xcjc.net
 - https://wiki.freepascal.org/Main_Page
-
 
 
 Resources 
