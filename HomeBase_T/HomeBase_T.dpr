@@ -8,7 +8,11 @@ uses
   System.SysUtils,
   System.Hash;
 
-
+{
+ ###
+ ### Start of grunt ID allocation functionality
+ ###
+}
 function genmd5(plaintext : string) : string;
 begin
   Result := THashMD5.GetHashString(plaintext);
@@ -45,8 +49,19 @@ begin
     B:= NOT B;
    end;
 end;
+{
+ ###
+ ### End of grunt ID allocation functionality
+ ###
+}
 
 
+
+{
+ ###
+ ### Start of Main processing loop
+ ###
+}
 begin
 try
   WriteLn('[+] SeaShell1 :');
@@ -62,3 +77,9 @@ except
   end;
 
 end.
+
+{
+ ###
+ ### Start of Main processing loop
+ ###
+}
