@@ -1,4 +1,4 @@
-program SeaShell_E;
+program SeaShell_T;
 
 {$APPTYPE CONSOLE}
 
@@ -15,9 +15,6 @@ uses
 {
 https://github.com/vladon/IdTcpClientAndServerExample
 }
-
-
-
 
 
 begin
