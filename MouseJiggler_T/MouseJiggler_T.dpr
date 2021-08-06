@@ -13,7 +13,7 @@ var
   MyMouse : TMouse;
 
   JA, SW, SH, RX, RY, FL, TS, TMS : Integer;
-  mx, my, nx, ny, len : double;
+  //mx, my, nx, ny, len : double;
 
 begin
   try

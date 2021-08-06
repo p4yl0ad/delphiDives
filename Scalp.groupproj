@@ -30,12 +30,6 @@
         <Projects Include="EncBoi_T\EncBoi_T.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="SeaShell_E\SeaShell_T.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="HomeBase_T\HomeBase_T.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -125,32 +119,14 @@
     <Target Name="EncBoi_T:Make">
         <MSBuild Projects="EncBoi_T\EncBoi_T.dproj" Targets="Make"/>
     </Target>
-    <Target Name="SeaShell_T">
-        <MSBuild Projects="SeaShell_E\SeaShell_T.dproj"/>
-    </Target>
-    <Target Name="SeaShell_T:Clean">
-        <MSBuild Projects="SeaShell_E\SeaShell_T.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="SeaShell_T:Make">
-        <MSBuild Projects="SeaShell_E\SeaShell_T.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="HomeBase_T">
-        <MSBuild Projects="HomeBase_T\HomeBase_T.dproj"/>
-    </Target>
-    <Target Name="HomeBase_T:Clean">
-        <MSBuild Projects="HomeBase_T\HomeBase_T.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="HomeBase_T:Make">
-        <MSBuild Projects="HomeBase_T\HomeBase_T.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T;FirstLibrary_T;PeeInvoke_E;QuietShower_E;EncBoi_T;SeaShell_T;HomeBase_T"/>
+        <CallTarget Targets="HelloDelphi;PipeHunt_R;QuickPortscan_R;BasedAmsi_E;MouseJiggler_T;FirstLibrary_T;PeeInvoke_E;QuietShower_E;EncBoi_T"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HelloDelphi:Clean;PipeHunt_R:Clean;QuickPortscan_R:Clean;BasedAmsi_E:Clean;MouseJiggler_T:Clean;FirstLibrary_T:Clean;PeeInvoke_E:Clean;QuietShower_E:Clean;EncBoi_T:Clean;SeaShell_T:Clean;HomeBase_T:Clean"/>
+        <CallTarget Targets="HelloDelphi:Clean;PipeHunt_R:Clean;QuickPortscan_R:Clean;BasedAmsi_E:Clean;MouseJiggler_T:Clean;FirstLibrary_T:Clean;PeeInvoke_E:Clean;QuietShower_E:Clean;EncBoi_T:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HelloDelphi:Make;PipeHunt_R:Make;QuickPortscan_R:Make;BasedAmsi_E:Make;MouseJiggler_T:Make;FirstLibrary_T:Make;PeeInvoke_E:Make;QuietShower_E:Make;EncBoi_T:Make;SeaShell_T:Make;HomeBase_T:Make"/>
+        <CallTarget Targets="HelloDelphi:Make;PipeHunt_R:Make;QuickPortscan_R:Make;BasedAmsi_E:Make;MouseJiggler_T:Make;FirstLibrary_T:Make;PeeInvoke_E:Make;QuietShower_E:Make;EncBoi_T:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
