@@ -56,7 +56,7 @@ begin
     False,
     CREATE_NEW_PROCESS_GROUP or NORMAL_PRIORITY_CLASS,
     nil,
-    'D:\Qport\trunk\Qport',
+    'C:\Windows',
     StartInfo,
     ProcInfo
   );
